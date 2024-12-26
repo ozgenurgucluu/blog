@@ -10,6 +10,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        textHeader: "#818181",
+        bgHeader: "#222222",
       },
     },
   },
