@@ -6,3 +6,10 @@ export const fetchAllPostsService = (filter = {}) => {
     .then((res) => [null, res.data])
     .catch((error) => [error, null]);
 };
+
+export const fetchPostBySlug = (slug) => {
+  return baseService
+    .get(`/posts/${slug}`)
+    .then((res) => [null, res.data])
+    .catch((err) => [err, null]);
+};
