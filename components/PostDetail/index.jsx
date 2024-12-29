@@ -19,6 +19,7 @@ const PostDetail = ({ post, posts }) => {
         <p>{post.summary}</p>
       </div>
       <div className="flex flex-col gap-3">
+        <h1 className="p-3 font-semibold">İlgini Çekebilecek Haberler</h1>
         {filteredPosts.map((post, index) => (
           <Link
             className="w-[310px] flex flex-col gap-1 shadow-lg p-3 rounded-md"
