@@ -8,7 +8,7 @@ const Header = ({ categories }) => {
         {categories.map((category, index) => (
           <Link
             key={index}
-            href={"/"}
+            href={`/${category.slug}`}
             className="text-textHeader font-semibold tracking-tight hover:text-gray-100"
           >
             {category.title.toUpperCase("tr")}

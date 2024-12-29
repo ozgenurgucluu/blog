@@ -5,6 +5,7 @@ import { fetchAllCategoriesService } from "@/services/categoryService";
 
 export default async function RootLayout({ children }) {
   const [reqError, reqData] = await fetchAllCategoriesService();
+
   return (
     <html lang="en">
       <body>
