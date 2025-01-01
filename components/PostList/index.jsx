@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const PostList = ({ posts }) => {
   return (
-    <div className="grid grid-cols-4 gap-4 container mx-auto sm:p-3 sm:px-6 my-5 ">
+    <div className="grid grid-cols-4 gap-4 container mx-auto  my-5 ">
       {posts.map((post, index) => (
         <div
           key={index}

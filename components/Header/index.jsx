@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Header = ({ categories }) => {
   return (
-    <header className="flex items-center justify-center bg-bgHeader h-20">
-      <div className="flex justify-center gap-6 ">
+    <header className="flex items-center justify-center bg-bgHeader h-24">
+      <div className="flex justify-evenly container  ">
         {categories.map((category, index) => (
           <Link
             key={index}

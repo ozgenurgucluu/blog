@@ -10,7 +10,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header categories={!reqError ? reqData : []} />
-        <main className="flex-1"> {children} </main>
+        <main className="flex-1 my-10"> {children} </main>
         <Footer />
       </body>
     </html>
