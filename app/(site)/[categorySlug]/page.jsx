@@ -17,7 +17,14 @@ const CategoryPage = async ({ params }) => {
 
   return (
     <div>
-      <PostList posts={filteredPosts} />
+      {filteredPosts.length === 0 ? (
+        <p>
+          <span className="italic">{category.title}</span> Kategoriye Ait Ürün
+          Bulunamadı
+        </p>
+      ) : (
+        <PostList posts={filteredPosts} />
+      )}
     </div>
   );
 };

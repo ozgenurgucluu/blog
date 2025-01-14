@@ -21,9 +21,15 @@ const TagPage = async ({ params }) => {
     post.tags.map((i) => i.slug).includes(tagSlug)
   );
   return (
-    <>
+    <div className="container mx-auto">
+      <h1
+        className="text-xl text-black font-semibold p-2 w-auto"
+        style={{ backgroundColor: tag.bgColor, color: tag.textColor }}
+      >
+        {tag.title}
+      </h1>
       <PostList posts={filteredTag} />
-    </>
+    </div>
   );
 };
 

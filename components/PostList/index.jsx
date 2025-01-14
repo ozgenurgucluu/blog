@@ -7,7 +7,7 @@ const PostList = ({ posts }) => {
       {posts.map((post, index) => (
         <div
           key={index}
-          className="border border-black/15 flex flex-col sm:gap-2 transition-transform duration-500 ease-in-out hover:scale-90 rounded-md px-2"
+          className="flex flex-col sm:gap-2 transition-transform duration-500 ease-in-out hover:scale-90 rounded-md px-2"
         >
           <Link href={`/${post.categories[0].slug}/${post.slug}`}>
             <Image

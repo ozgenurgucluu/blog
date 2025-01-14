@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import classNames from "classnames";
 
 const Header = ({ categories }) => {
   return (
@@ -9,7 +10,7 @@ const Header = ({ categories }) => {
           <Link
             key={index}
             href={`/${category.slug}`}
-            className="text-textHeader font-semibold tracking-tight hover:text-gray-100"
+            className={classNames("text-gray-400 font-semibold tracking-tight hover:text-gray-100")}
           >
             {category.title.toUpperCase("tr")}
           </Link>

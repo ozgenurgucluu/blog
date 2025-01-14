@@ -17,6 +17,21 @@ const PostDetail = ({ post, posts }) => {
           className="shadow-xl"
         />
         <p>{post.summary}</p>
+        <p>{post.content}</p>
+
+        <div className="flex gap-2">
+          {" "}
+          {post.tags.map((tag, index) => (
+            <Link
+              href={`/tags/${tag.slug}`}
+              key={index}
+              style={{ backgroundColor: tag.bgColor, color: tag.textColor }}
+              className="p-1"
+            >
+              #{tag.title}
+            </Link>
+          ))}
+        </div>
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="p-3 font-semibold text-black text-lg">

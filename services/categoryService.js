@@ -13,3 +13,24 @@ export const fetchCategoryBySlug = (slug) => {
     .then((res) => [null, res.data])
     .catch((error) => [error, null]);
 };
+
+export const createCategory = (data) => {
+  return baseService
+    .post("/categories", data)
+    .then((res) => [null, res.data])
+    .catch((err) => [err, null]);
+};
+
+export const updateCategory = (id, data) => {
+  return baseService
+    .put(`/categories/${id}`, data)
+    .then((res) => [null, res.data])
+    .catch((err) => [err, null]);
+};
+
+export const deleteCategory = (id) => {
+  return baseService
+    .delete(`/categories/${id}`)
+    .then((res) => [null, res.data])
+    .catch((error) => [error, null]);
+};

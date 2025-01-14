@@ -10,9 +10,9 @@ import { FaTruck } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className="flex flex-col ">
-      <div className="bg-bgHeader w-auto h-28 text-white justify-center flex items-center gap-5 my-3">
+      <div className="bg-bgHeader w-auto h-28 text-gray-300 justify-center flex items-center gap-5 my-3">
         <span className="text-xl"> A call-to-action text</span>
-        <button className="bg-blue-500 py-4 px-5 rounded-md font-semibold">
+        <button className="bg-gray-400 py-4 px-5 text-white rounded-md font-semibold">
           CONTACT US
         </button>
       </div>
