@@ -22,8 +22,10 @@ export const createCategory = (data) => {
 };
 
 export const updateCategory = (id, data) => {
+  const token=localStorage.getItem("token");
+ 
   return baseService
-    .put(`/categories/${id}`, data)
+    .put(`/categories/${id}`, data,{headers: { Authorization: `Bearer ${token}` }})
     .then((res) => [null, res.data])
     .catch((err) => [err, null]);
 };

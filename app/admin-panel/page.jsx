@@ -1,10 +1,8 @@
 "use client";
-import React, { useContext } from "react";
-import { AuthContext } from "@/contexts/authContext";
+import { useAuthStore } from "@/stores/authStore";
 
 const AdminPanel = () => {
-  const { user } = useContext(AuthContext);
-
+  const { user } = useAuthStore();
   return <div>{JSON.stringify(user)}</div>;
 };
 

@@ -1,11 +1,10 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchMyProfile } from "@/services/authService";
-import { AuthContext } from "@/contexts/authContext";
-import AuthContextProvider from "@/contexts/authContext";
+import { useAuthStore } from "@/stores/authStore";
 
 export default function RootLayout({ children }) {
-  const [user, setUser] = useState();
+  const { setUser } = useAuthStore();
 
   useEffect(() => {
     (async () => {
@@ -24,9 +23,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <AuthContextProvider user={user}>
-        <body>{children}</body>
-      </AuthContextProvider>
+      <body>{children}</body>
     </html>
   );
 }
