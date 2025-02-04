@@ -7,8 +7,8 @@ const LoginPage = () => {
   const [render, setRender] = useState(false);
 
   const [data, setData] = useState({
-    email: "nazifcandurgt@gmail.com",
-    password: "Test12345*",
+    email: "ozgenurguclu0@gmail.com",
+    password: "Test123456*",
   });
 
   const handleSubmit = async () => {
@@ -57,6 +57,9 @@ const LoginPage = () => {
           >
             Login
           </button>
+          <label className="italic text-gray-400">
+            ozgenurguclu0@gmail.com Test123456*
+          </label>
         </div>
       </div>
     )

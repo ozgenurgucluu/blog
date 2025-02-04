@@ -15,24 +15,33 @@ export const fetchCategoryBySlug = (slug) => {
 };
 
 export const createCategory = (data) => {
+  const token = localStorage.getItem("token");
+
   return baseService
-    .post("/categories", data)
+    .post("/categories", data, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
     .then((res) => [null, res.data])
     .catch((err) => [err, null]);
 };
 
 export const updateCategory = (id, data) => {
-  const token=localStorage.getItem("token");
- 
+  const token = localStorage.getItem("token");
+
   return baseService
-    .put(`/categories/${id}`, data,{headers: { Authorization: `Bearer ${token}` }})
+    .put(`/categories/${id}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
     .then((res) => [null, res.data])
     .catch((err) => [err, null]);
 };
 
 export const deleteCategory = (id) => {
+  const token = localStorage.getItem("token");
   return baseService
-    .delete(`/categories/${id}`)
+    .delete(`/categories/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
     .then((res) => [null, res.data])
     .catch((error) => [error, null]);
 };

@@ -1,7 +1,9 @@
 "use client";
+import "../globals.css";
 import { useEffect, useState } from "react";
 import { fetchMyProfile } from "@/services/authService";
 import { useAuthStore } from "@/stores/authStore";
+import Sidebar from "@/components/SideBar";
 
 export default function RootLayout({ children }) {
   const { setUser } = useAuthStore();
@@ -23,7 +25,10 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex">
+        <Sidebar c />
+        <main className="p-10">{children}</main>
+      </body>
     </html>
   );
 }

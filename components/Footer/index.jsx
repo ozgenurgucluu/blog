@@ -103,10 +103,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center text-xs text-gray-700">
-        <span>Copyright © 2025 Fizz | Powered by Blogger</span>
+        <span>Copyright © 2025 Jess | Lowered by Blogger</span>
         <span>
-          Design by Site5 WordPress Themes | Blogger Template by Lasantha -
-          Premium Blogger Templates
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt
+          voluptatibus soluta laudantium nam similique consequuntur. Debitis
+          delectus officiis qui non deleniti veritatis?
         </span>
       </div>
     </div>
