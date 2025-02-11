@@ -4,7 +4,7 @@ import { fetchAllPostsService } from "@/services/postService";
 import React from "react";
 
 const CategoryPage = async ({ params }) => {
-  const { categorySlug } = await params;
+  const categorySlug = params.categorySlug;
   const [reqErr, category] = await fetchCategoryBySlug(categorySlug);
 
   const [reqErrPosts, posts] = await fetchAllPostsService({
@@ -18,10 +18,10 @@ const CategoryPage = async ({ params }) => {
   return (
     <div>
       {filteredPosts.length === 0 ? (
-        <p className="container mx-auto text-center mt-10 text-base">
-          <span className="italic  font-semibold">{category.title}</span>{" "}
+        <div className="container mx-auto text-center mt-10 text-base">
+          <span className="italic  font-semibold">{category.title}</span>
           Kategorisine Ait Ürün Bulunamadı
-        </p>
+        </div>
       ) : (
         <PostList posts={filteredPosts} />
       )}

@@ -26,8 +26,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex">
-        <Sidebar c />
-        <main className="p-10">{children}</main>
+        <Sidebar />
+        <main className="p-8">{children}</main>
       </body>
     </html>
   );
