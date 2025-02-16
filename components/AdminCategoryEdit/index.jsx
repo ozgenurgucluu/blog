@@ -1,8 +1,8 @@
-"use client";
-import { updateCategory } from "@/services/categoryService";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+'use client';
+import { updateCategory } from '@/services/categoryService';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const AdminCategoryEdit = ({ category }) => {
   const [selectedCategory, setSelectedCategory] = useState(category);
@@ -16,10 +16,10 @@ const AdminCategoryEdit = ({ category }) => {
     );
 
     if (reqError) {
-      alert("Bir hata oluştu");
+      alert('Bir hata oluştu');
     } else {
-      alert("Kategori başarıyla güncellendi");
-      router.push("/admin-panel/categories");
+      alert('Kategori başarıyla güncellendi');
+      router.push('/admin-panel/categories');
     }
   };
 
@@ -45,7 +45,7 @@ const AdminCategoryEdit = ({ category }) => {
             className="border border-blue-300 outline-none p-2 w-full rounded"
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col ">
           <label htmlFor="id" className="mb-1 font-medium">
             Kategori Id:
           </label>
@@ -56,7 +56,7 @@ const AdminCategoryEdit = ({ category }) => {
             className="border border-gray-300 outline-none p-2 w-full rounded bg-gray-100"
           />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col ">
           <label htmlFor="slug" className="mb-1 font-medium">
             Kategori Slug:
           </label>
@@ -66,7 +66,7 @@ const AdminCategoryEdit = ({ category }) => {
             onChange={(e) =>
               setSelectedCategory({ ...selectedCategory, slug: e.target.value })
             }
-            className="border border-blue-300 outline-none p-2 w-full rounded"
+            className="border border-blue-300 outline-none p-2 w-64 rounded"
           />
         </div>
         <div className="flex gap-4">

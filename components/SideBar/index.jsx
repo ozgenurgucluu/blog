@@ -7,10 +7,32 @@ import Category from '@/icons/Category';
 import Link from 'next/link';
 import TagIcon from '@/icons/TagIcon';
 import { usePathname } from 'next/navigation';
+import classNames from 'classnames';
+import { GrDocument } from 'react-icons/gr';
 
 const SideBar = () => {
   const { user } = useAuthStore();
   const pathname = usePathname();
+
+  const links = [
+    {
+      title: 'KATEGORİ',
+      pathname: '/admin-panel/categories',
+      icon: <Category />,
+    },
+    {
+      title: 'ETİKETLER',
+      pathname: '/admin-panel/tags',
+      icon: <TagIcon />,
+    },
+    {
+      title: 'İÇERİKLER',
+      pathname: '/admin-panel/posts',
+      icon: <GrDocument className="w-5 h-5" />,
+    },
+  ];
+
+  const activeLink = links.find((link) => link.pathname === pathname);
 
   return (
     <div className="flex flex-col px-4 py-6 sticky top-0 flex-shrink-0 h-screen bg-white shadow-lg text-black/75 gap-8">
@@ -18,11 +40,12 @@ const SideBar = () => {
         href="/admin-panel"
         className="text-md font-semibold text-black/70 hover:text-black transition-colors"
       >
-        Dashboard {pathname}
+        Dashboard
       </Link>
       <div className="flex items-center gap-3">
         <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-gray-300">
           <Image
+            loader={({ src }) => src}
             src={avatar}
             alt="User Avatar"
             layout="fill"
@@ -43,20 +66,23 @@ const SideBar = () => {
         </div>
       </div>
       <div className="flex flex-col gap-1 border-t border-b border-gray-200">
-        <Link
-          href="/admin-panel/categories"
-          className="text-sm font-medium text-black  hover:text-blue-600 flex items-center gap-3 group hover:bg-gray-200 p-3 rounded-lg cursor-pointer transition-all"
-        >
-          <Category className="w-5 h-5 text-gray-700 hover:text-blue-600" />
-          Categories
-        </Link>
-        <Link
-          href="/admin-panel/tags"
-          className="text-sm font-medium text-black flex items-center gap-3 group hover:bg-gray-200 p-3 rounded-lg cursor-pointer transition-all hover:text-blue-600"
-        >
-          <TagIcon className="w-5 h-5 text-gray-700 hover:text-blue-600 " />
-          Tags
-        </Link>
+        {links.map((link, index) => (
+          <Link
+            href={link.pathname}
+            key={index}
+            className={classNames(
+              'text-sm font-medium text-black hover:text-blue-600 flex items-center gap-3 group hover:bg-gray-200 p-3 rounded-lg cursor-pointer transition-all',
+              {
+                ' text-blue-600 ': pathname === link.pathname,
+              }
+            )}
+          >
+            <span className="w-5 h-5 text-gray-700 hover:text-blue-600">
+              {link.icon}
+            </span>
+            {link.title}
+          </Link>
+        ))}
       </div>
     </div>
   );

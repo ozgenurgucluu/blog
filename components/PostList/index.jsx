@@ -1,5 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const PostList = ({ posts }) => {
   return (
@@ -11,6 +12,7 @@ const PostList = ({ posts }) => {
         >
           <Link href={`/${post.categories[0].slug}/${post.slug}`}>
             <Image
+              loader={({ src }) => src}
               src={post?.thumbnail}
               alt="image"
               width={300}

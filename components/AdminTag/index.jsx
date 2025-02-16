@@ -22,7 +22,7 @@ const AdminTag = ({ tags }) => {
 
     alert('Kategori başarıyla eklendi.');
     setLocalTags([...localTags, data]);
-    setInputValue({ title: 'd', bgColor: '#000', textColor: '#FFF' }); // Formu temizle
+    setInputValue({ title: 'd', bgColor: '#000', textColor: '#FFF' });
   };
 
   const deleteItem = async (id) => {
@@ -36,7 +36,7 @@ const AdminTag = ({ tags }) => {
   };
 
   return (
-    <div className="flex flex-col gap-8 p-6 bg-slate-50 rounded-md shadow-lg">
+    <div className="flex flex-col gap-8 p-6 bg-slate-50 rounded-md shadow-lg ">
       <div className="flex flex-col gap-2">
         <div className="flex gap-3 items-center">
           <label className="text-gray-700 font-medium">Tag Adı Girin:</label>
@@ -44,7 +44,7 @@ const AdminTag = ({ tags }) => {
             type="text"
             placeholder="Tag Adı"
             value={inputValue.title}
-            className="border p-3 rounded-md w-1/5 text-sm text-gray-900 outline-blue-300 focus:ring-2 focus:ring-blue-400 transition-all"
+            className="border p-3 rounded-md text-sm text-gray-900 outline-blue-300 focus:ring-2 focus:ring-blue-400 transition-all"
             onChange={(e) =>
               setInputValue({ ...inputValue, title: e.target.value })
             }
@@ -87,31 +87,33 @@ const AdminTag = ({ tags }) => {
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap gap-3 mt-6">
+
+      <div className="flex flex-col gap-3 mt-6 ">
         {localTags.map((tag) => (
           <div
-            className="border flex gap-3 justify-between items-center rounded-md p-3 w-full max-w-sm shadow-md"
+            className="border flex   items-center justify-between rounded-md p-1 font-semibold w-full  "
             key={tag.id}
             style={{
               backgroundColor: tag.bgColor,
               color: tag.textColor,
             }}
           >
-            <span className="mx-5 cursor-pointer font-semibold">
+            <span className="flex mx-5 cursor-pointer font-semibold text-lg">
               {tag.title}
             </span>
             <div className="flex gap-4 items-center">
               <Link
-                className="flex items-center justify-center border border-red-200 rounded-md p-4 hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out shadow-md transform hover:scale-105"
+                className="flex gap-2 items-center justify-center border text-white border-blue-200 rounded-md p-3 hover:bg-gray-400 transition-all duration-300 ease-in-out shadow-md transform hover:scale-105"
                 href={`/admin-panel/tags/${tag.slug}/edit`}
               >
-                <FaEdit className="text-white   w-5 h-4 rounded-full flex items-center justify-center transition-all" />
+                <FaEdit className=" w-5 h-4 rounded-full flex items-center justify-center transition-all" />
+                <span> Düzenle</span>
               </Link>
               <button
-                className="flex items-center justify-center border border-red-200 rounded-md p-2 hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out shadow-md transform hover:scale-105"
+                className="flex items-center justify-center border border-gray-100 rounded-md p-2  hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out shadow-md transform hover:scale-105"
                 onClick={() => deleteItem(tag.id)}
               >
-                <span className="text-white  w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-all">
+                <span className="text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-700 transition-all">
                   <MdDelete className="text-white text-lg w-5 h-6" />
                 </span>
               </button>

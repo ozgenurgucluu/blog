@@ -1,15 +1,17 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const PostDetail = ({ post, posts }) => {
   const filteredPosts = posts.filter((i) => i.slug !== post.slug);
-  console.log("filterllee", filteredPosts);
+  console.log('filterllee', filteredPosts);
   return (
     <div className="container mx-auto my-10 flex gap-14  ">
       <div className="flex flex-col gap-5 w-[955px] ">
         <h1 className="text-2xl font-semibold ">{post.title}</h1>
         <Image
+          loader={({ src }) => src}
           src={post.thumbnail}
           alt="image"
           width={955}
@@ -20,7 +22,7 @@ const PostDetail = ({ post, posts }) => {
         <p>{post.content}</p>
 
         <div className="flex gap-2">
-          {" "}
+          {' '}
           {post.tags.map((tag, index) => (
             <Link
               href={`/tags/${tag.slug}`}
@@ -47,6 +49,7 @@ const PostDetail = ({ post, posts }) => {
               {post.title}
             </span>
             <Image
+              loader={({ src }) => src}
               src={post.thumbnail}
               width={310}
               height={315}
