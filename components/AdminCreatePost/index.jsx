@@ -16,7 +16,6 @@ const AdminCreatePost = ({ categories, tags }) => {
   });
   const handleSave = async (e) => {
     e.preventDefault();
-    console.log(newPost);
     const [reqError, newData] = await createPost(newPost);
     if (reqError) {
       alert('Bir hata oluştu');
@@ -24,7 +23,6 @@ const AdminCreatePost = ({ categories, tags }) => {
       alert('Post başarıyla eklendi');
       router.push('/admin-panel/posts');
     }
-    console.log('new datamızz', newData);
   };
 
   const handleClickTag = (tag) => {

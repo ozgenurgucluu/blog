@@ -6,7 +6,6 @@ import { FaEdit } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 
 const AdminTag = ({ tags }) => {
-  console.log(tags);
   const [localTags, setLocalTags] = useState(tags);
   const [inputValue, setInputValue] = useState({
     title: '',

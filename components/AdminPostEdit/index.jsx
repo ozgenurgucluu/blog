@@ -12,7 +12,6 @@ const AdminPostEdit = ({ editPost, categories, tags }) => {
 
   const handleSave = async (e) => {
     e.preventDefault();
-    console.log(selectedPost);
     const [reqError, newPost] = await updatePost(selectedPost.id, selectedPost);
     if (reqError) {
       alert('Bir hata oluştu');

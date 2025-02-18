@@ -8,7 +8,6 @@ const AdminPanel = async () => {
   const [postErr, posts] = await fetchAllPostsService();
   const [categoryErr, categories] = await fetchAllCategoriesService();
   const [tagErr, tags] = await fetchAllTagService();
-  console.log({ posts, categories, tags });
   return <AdminLayout {...{ categories, tags, posts }} />;
 };
 

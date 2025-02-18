@@ -9,7 +9,6 @@ const PostEditPage = async ({ params }) => {
   const [reqErr, editPost] = await fetchPostBySlug(postSlug);
   const [err, categories] = await fetchAllCategoriesService();
   const [Err, tags] = await fetchAllTagService();
-  console.log('categoridddes', categories);
   const postData = {
     ...editPost,
     categories: editPost.categories.map((category) => category.id),

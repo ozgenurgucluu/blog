@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 const PostDetail = ({ post, posts }) => {
   const filteredPosts = posts.filter((i) => i.slug !== post.slug);
-  console.log('filterllee', filteredPosts);
   return (
     <div className="container mx-auto my-10 flex gap-14  ">
       <div className="flex flex-col gap-5 w-[955px] ">
