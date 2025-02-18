@@ -16,7 +16,7 @@ const Header = ({ categories }) => {
             className={classNames(
               'text-gray-400 font-semibold tracking-tight hover:text-gray-100',
               {
-                'text-gray-100 font-medium text-lg':
+                'text-white font-medium text-lg':
                   pathname === `/${category.slug}`,
               }
             )}

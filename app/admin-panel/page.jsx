@@ -1,9 +1,15 @@
-"use client";
-import { useAuthStore } from "@/stores/authStore";
+import { fetchAllCategoriesService } from '@/services/categoryService';
+import { fetchAllPostsService } from '@/services/postService';
+import { useAuthStore } from '@/stores/authStore';
+import { fetchAllTagService } from '@/services/tagService';
+import AdminLayout from '@/components/AdminLayout';
 
-const AdminPanel = () => {
-  const { user } = useAuthStore();
-  return <div>{JSON.stringify(user)}</div>;
+const AdminPanel = async () => {
+  const [postErr, posts] = await fetchAllPostsService();
+  const [categoryErr, categories] = await fetchAllCategoriesService();
+  const [tagErr, tags] = await fetchAllTagService();
+  console.log({ posts, categories, tags });
+  return <AdminLayout {...{ categories, tags, posts }} />;
 };
 
 export default AdminPanel;

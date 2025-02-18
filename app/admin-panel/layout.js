@@ -6,7 +6,7 @@ import { useAuthStore } from '@/stores/authStore';
 import Sidebar from '@/components/SideBar';
 
 export default function RootLayout({ children }) {
-  const { setUser } = useAuthStore();
+  const { setUser, user } = useAuthStore();
 
   useEffect(() => {
     (async () => {
@@ -26,8 +26,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex">
-        <Sidebar />
-        <main className="p-8 flex-1">{children}</main>
+        {user && (
+          <>
+            <Sidebar />
+            <main className="p-8 flex-1">{children}</main>
+          </>
+        )}
       </body>
     </html>
   );
