@@ -10,7 +10,7 @@ git clone https://github.com/ozgenurgucluu/blog
 
 # Getting Started with Create Next.js App
 
-Blog Application Developed with CRUD (delete, update) Operations Using Next.js and Tailwind CSS Focusing on full CRUD functionality, it developed a dynamic application that allows users to add, edit and delete blog posts.
+This is a dynamic blog application developed with Next.js and Tailwind CSS, focusing on full CRUD (Create, Read, Update, Delete) functionality. It allows users to easily add, edit, and delete blog posts in an intuitive, responsive design.
 
 ## Available Scripts
 
