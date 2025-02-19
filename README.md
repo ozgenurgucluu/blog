@@ -6,7 +6,7 @@ In the project directory, you can run:
 git clone https://github.com/ozgenurgucluu/blog
 ```
 
-[BLOG](./videos/blog.mp4)
+[Blog Video](./videos/blog.mp4)
 
 # Getting Started with Create Next.js App
 
