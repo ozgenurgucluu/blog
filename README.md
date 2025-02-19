@@ -1,4 +1,4 @@
-# LCW.COM CLONE
+# Blog
 
 In the project directory, you can run:
 
@@ -6,11 +6,11 @@ In the project directory, you can run:
 git clone https://github.com/ozgenurgucluu/blog
 ```
 
-[Blog Video](./videos/blog.mp4)
+[Ornek Video]("https://github.com/ozgenurgucluu/blog/blob/main/videos/blog.mp4")
 
 # Getting Started with Create Next.js App
 
-In this project, I cloned the LCW web application. Categories, add to cart, favorite, save, login and more work with dynamic components. I used `Tailwind` with `Next.js`
+Blog Application Developed with CRUD (delete, update) Operations Using Next.js and Tailwind CSS Focusing on full CRUD functionality, it developed a dynamic application that allows users to add, edit and delete blog posts.
 
 ## Available Scripts
 
@@ -24,3 +24,5 @@ Install packages in the project
 
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in your browser.
+
+[def]: ./videos/blog.mp4
